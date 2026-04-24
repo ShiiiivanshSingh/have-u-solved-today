@@ -1,6 +1,6 @@
 <div align="center">
+<img width="366" height="599" alt="Screenshot 2026-04-24 at 11 07 54 PM" src="https://github.com/user-attachments/assets/1b5e8860-bc0b-4b80-bd01-9c396d6acc90" />
 
-<img width="387" height="621" alt="Have You Solved Today? Demo" src="https://github.com/user-attachments/assets/a8c85456-bb0b-439a-bc68-2c6d04cc0b0e" />
 
 # Have You Solved Today?
 
