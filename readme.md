@@ -1,10 +1,20 @@
 <div align="center">
-<img width="366" height="599" alt="Screenshot 2026-04-24 at 11 07 54 PM" src="https://github.com/user-attachments/assets/1b5e8860-bc0b-4b80-bd01-9c396d6acc90" />
 
 
 # Have You Solved Today?
 
 **A Chrome extension to track your daily LeetCode & Codeforces solving streak.**
+<p align="center">
+  <a href="https://github.com/ShiiiivanshSingh/have-u-solved-today/releases/download/release/have-u-solved-today-main.zip">
+    <img src="https://img.shields.io/badge/⬇%20DOWNLOAD%20NOW-HAVE%20YOU%20SOLVED%20TODAY-blue?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+</p>
+
+   
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1b5e8860-bc0b-4b80-bd01-9c396d6acc90" width="45%" />
+  <img src="https://github.com/user-attachments/assets/8122e8bf-c619-4eac-9db3-2095f55b8001" width="45%" />
+</p>
 
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4f9cf9?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/ShiiiivanshSingh/have-u-solved-today)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-3ddc84?style=flat-square)](https://developer.chrome.com/docs/extensions/mv3/)
