@@ -1,0 +1,267 @@
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0e0e10;
+  --surface: #18181c;
+  --surface2: #222228;
+  --border: #2e2e38;
+  --text: #f0f0f4;
+  --muted: #6b6b7a;
+  --lc: #4f9cf9;
+  --cf: #f5c542;
+  --green: #3ddc84;
+  --red: #ff4e4e;
+  --accent: #c8ff57;
+  --streak-good: #3ddc84;
+  --streak-fire: #ff7c2a;
+  --streak-epic: #ff4e4e;
+  --streak-legendary: #c8ff57;
+}
+
+body {
+  width: 360px;
+  min-height: 200px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app { padding: 0; }
+.view { animation: fadeIn 0.2s ease; }
+.hidden { display: none !important; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Setup header ─────────────────────────────────────────── */
+header {
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.logo-mark { font-size: 28px; color: var(--accent); line-height: 1; margin-bottom: 8px; font-weight: 800; }
+h1 { font-size: 22px; font-weight: 800; line-height: 1.15; letter-spacing: -0.5px; color: var(--text); }
+.subtitle { margin-top: 6px; font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.8px; }
+
+/* ── Form ─────────────────────────────────────────────────── */
+.form { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+label { font-size: 10px; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+input {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
+  padding: 10px 12px; color: var(--text); font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; outline: none; transition: border-color 0.15s;
+}
+input:focus { border-color: var(--accent); }
+input::placeholder { color: var(--muted); }
+.btn-primary {
+  background: var(--accent); color: #0e0e10; border: none; border-radius: 6px;
+  padding: 12px; font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700;
+  cursor: pointer; margin-top: 4px; transition: opacity 0.15s, transform 0.1s;
+}
+.btn-primary:hover { opacity: 0.9; }
+.btn-primary:active { transform: scale(0.98); }
+
+/* ── Main header ──────────────────────────────────────────── */
+.main-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px 12px; border-bottom: 1px solid var(--border);
+}
+.date-label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; }
+.btn-settings { background: none; border: none; color: var(--muted); font-size: 16px; cursor: pointer; padding: 2px 4px; transition: color 0.15s; line-height: 1; }
+.btn-settings:hover { color: var(--text); }
+
+/* ── Platform cards ───────────────────────────────────────── */
+.status-cards { padding: 16px 16px 0; display: flex; flex-direction: column; gap: 10px; }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-left-width: 3px;
+  border-radius: 8px; padding: 12px 14px;
+  display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto auto;
+  gap: 4px 8px; align-items: center; transition: border-color 0.2s;
+}
+/* #1 – Colored left accent per platform */
+#lc-card { border-left-color: var(--lc); }
+#cf-card { border-left-color: var(--cf); }
+.card.solved   { border-color: var(--green); border-left-color: var(--green); }
+.card.unsolved { border-color: var(--red);   border-left-color: var(--red); }
+
+.card-platform { display: flex; align-items: center; gap: 7px; }
+.platform-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.lc-dot { background: var(--lc); }
+.cf-dot { background: var(--cf); }
+.platform-name { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+
+/* Rating badge */
+.rating-badge {
+  margin-left: auto; font-size: 10px; font-family: 'JetBrains Mono', monospace;
+  color: var(--muted); letter-spacing: 0.3px;
+}
+.rating-badge.lc { color: var(--lc); }
+.rating-badge.cf { color: var(--cf); }
+
+.card-status { display: flex; align-items: center; gap: 6px; justify-content: flex-end; }
+.status-icon { font-size: 16px; line-height: 1; }
+.status-text { font-size: 12px; font-weight: 600; color: var(--muted); }
+.status-text.solved   { color: var(--green); }
+.status-text.unsolved { color: var(--red); }
+
+/* Retry button */
+.btn-retry {
+  background: none; border: 1px solid var(--border); border-radius: 4px;
+  color: var(--muted); font-size: 12px; cursor: pointer; padding: 2px 6px;
+  transition: color 0.15s, border-color 0.15s; line-height: 1;
+}
+.btn-retry:hover { color: var(--text); border-color: var(--text); }
+
+.card-problem {
+  grid-column: 1 / -1; font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  color: var(--accent); text-decoration: none; letter-spacing: 0.2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 300px; padding-top: 1px;
+}
+.card-problem:empty { display: none; }
+.card-problem:hover { text-decoration: underline; }
+
+.card-link {
+  grid-column: 1 / -1; font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  color: var(--muted); text-decoration: none; letter-spacing: 0.3px; transition: color 0.15s; padding-top: 2px;
+}
+.card-link:hover { color: var(--accent); }
+
+/* ── Streak section ───────────────────────────────────────── */
+.streak-section {
+  margin: 10px 16px 0; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 12px;
+}
+.streak-header { display: flex; align-items: baseline; gap: 5px; margin-bottom: 6px; }
+.streak-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); flex: 1; }
+.streak-emoji { font-size: 18px; line-height: 1; }
+
+/* #3 – Pulse animation on active streaks */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.06); }
+}
+.streak-count {
+  font-size: 30px; font-weight: 800; color: var(--accent);
+  line-height: 1; letter-spacing: -1px; transition: color 0.3s;
+}
+.streak-count.good     { color: var(--streak-good);      animation: pulse 2.5s ease-in-out infinite; }
+.streak-count.fire     { color: var(--streak-fire);      animation: pulse 2s ease-in-out infinite; }
+.streak-count.epic     { color: var(--streak-epic);      animation: pulse 1.6s ease-in-out infinite; }
+.streak-count.legendary{ color: var(--streak-legendary); animation: pulse 1.2s ease-in-out infinite; }
+.streak-unit { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; }
+
+/* #7 – Stats row */
+.stats-row {
+  display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+  font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px;
+}
+.stats-row strong { color: var(--text); }
+.stat-sep { color: var(--border); }
+
+/* #4 – Progress bar */
+.progress-wrap { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.progress-bar { flex: 1; height: 3px; border-radius: 2px; background: var(--surface2); overflow: hidden; }
+.progress-bar-fill { height: 100%; border-radius: 2px; background: var(--accent); transition: width 0.5s ease; }
+.progress-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: var(--muted); white-space: nowrap; }
+
+/* ── Calendar legend ──────────────────────────────────────── */
+.calendar-legend { display: flex; gap: 8px; margin-bottom: 6px; }
+.legend-item {
+  display: flex; align-items: center; gap: 4px;
+  font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer;
+  transition: opacity 0.15s; user-select: none;
+}
+.legend-item:hover { color: var(--text); }
+.legend-item.dimmed { opacity: 0.35; }
+.legend-dot { width: 7px; height: 7px; border-radius: 2px; }
+.lc-col   { background: var(--lc); }
+.cf-col   { background: var(--cf); }
+.both-col { background: var(--green); }
+
+/* ── Calendar grid ────────────────────────────────────────── */
+.calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+
+.cal-month-label {
+  grid-column: 1 / -1; font-family: 'Syne', sans-serif; font-size: 11px;
+  font-weight: 700; color: var(--text); text-align: center; margin-bottom: 2px;
+}
+.cal-header {
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 8px;
+  color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; padding-bottom: 2px;
+}
+.cal-day {
+  aspect-ratio: 1; border-radius: 4px; background: var(--surface2); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 500;
+  color: var(--muted); cursor: default; transition: border-color 0.15s, background 0.15s;
+}
+.cal-blank  { background: transparent; border-color: transparent; pointer-events: none; }
+.cal-day.future { opacity: 0.25; }
+
+/* #1 – Today glow */
+.cal-day.today {
+  border-color: var(--accent); color: var(--accent); font-weight: 700;
+  box-shadow: 0 0 0 2px rgba(200, 255, 87, 0.3);
+}
+
+/* Solved base colors */
+.cal-day.solved-lc   { border-color: var(--lc);   color: var(--lc); }
+.cal-day.solved-cf   { border-color: var(--cf);   color: var(--cf); }
+.cal-day.solved-both { border-color: var(--green); color: var(--green); }
+
+/* #9 – Heatmap intensity (4 levels) */
+.cal-day.solved-lc.heat-1   { background: rgba(79,156,249,0.12); }
+.cal-day.solved-lc.heat-2   { background: rgba(79,156,249,0.25); }
+.cal-day.solved-lc.heat-3   { background: rgba(79,156,249,0.38); }
+.cal-day.solved-lc.heat-4   { background: rgba(79,156,249,0.52); }
+.cal-day.solved-cf.heat-1   { background: rgba(245,197,66,0.12); }
+.cal-day.solved-cf.heat-2   { background: rgba(245,197,66,0.25); }
+.cal-day.solved-cf.heat-3   { background: rgba(245,197,66,0.38); }
+.cal-day.solved-cf.heat-4   { background: rgba(245,197,66,0.52); }
+.cal-day.solved-both.heat-1 { background: rgba(61,220,132,0.12); }
+.cal-day.solved-both.heat-2 { background: rgba(61,220,132,0.25); }
+.cal-day.solved-both.heat-3 { background: rgba(61,220,132,0.38); }
+.cal-day.solved-both.heat-4 { background: rgba(61,220,132,0.52); }
+
+.cal-day.missed { background: rgba(255,78,78,0.08); border-color: var(--red); color: var(--red); }
+
+/* #10 – Platform toggle */
+.calendar.hide-lc   .solved-lc   { opacity: 0.1; }
+.calendar.hide-cf   .solved-cf   { opacity: 0.1; }
+.calendar.hide-both .solved-both { opacity: 0.1; }
+
+/* ── Floating tooltip ─────────────────────────────────────── */
+#cal-tooltip {
+  position: fixed; z-index: 999; pointer-events: none;
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 5px;
+  padding: 4px 8px; font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--text);
+  opacity: 0; transition: opacity 0.12s; white-space: nowrap;
+}
+
+/* ── Hint row ─────────────────────────────────────────────── */
+.hint-row { padding: 8px 16px 0; }
+.hint-text { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); line-height: 1.5; display: block; }
+
+/* ── Footer row ───────────────────────────────────────────── */
+.footer-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 16px 14px; gap: 8px;
+}
+.last-updated { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); letter-spacing: 0.3px; }
+.btn-refresh {
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 6px;
+  padding: 7px 14px; color: var(--muted); font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.8px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.btn-refresh:hover { color: var(--text); border-color: var(--text); }
+
+/* ── Loading spin ─────────────────────────────────────────── */
+.loading-spin { display: inline-block; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }

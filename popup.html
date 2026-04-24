@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Have You Solved Today?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <div class="app" id="app">
+
+    <!-- Setup view -->
+    <div class="view" id="view-setup">
+      <header>
+        <div class="logo-mark">∑</div>
+        <h1>Have You<br />Solved Today?</h1>
+        <p class="subtitle">Daily problem-solving accountability</p>
+      </header>
+      <div class="form">
+        <div class="field">
+          <label for="lc-input">LeetCode Username</label>
+          <input id="lc-input" type="text" placeholder="e.g. neal_wu" autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="field">
+          <label for="cf-input">Codeforces Handle</label>
+          <input id="cf-input" type="text" placeholder="e.g. tourist" autocomplete="off" spellcheck="false" />
+        </div>
+        <button class="btn-primary" id="save-btn">Start Tracking</button>
+      </div>
+    </div>
+
+    <!-- Main view -->
+    <div class="view hidden" id="view-main">
+      <header class="main-header">
+        <span class="date-label" id="date-label"></span>
+        <button class="btn-settings" id="settings-btn" title="Settings">⚙</button>
+      </header>
+
+      <div class="status-cards">
+
+        <!-- LeetCode card -->
+        <div class="card" id="lc-card">
+          <div class="card-platform">
+            <span class="platform-dot lc-dot"></span>
+            <span class="platform-name">LeetCode</span>
+            <span class="rating-badge" id="lc-rating"></span>
+          </div>
+          <div class="card-status">
+            <span class="status-icon" id="lc-icon">–</span>
+            <span class="status-text" id="lc-text">Checking…</span>
+            <button class="btn-retry hidden" id="lc-retry" title="Retry">↻</button>
+          </div>
+          <a class="card-problem" id="lc-problem" target="_blank"></a>
+          <a class="card-link" href="https://leetcode.com/problemset/" target="_blank" id="lc-link">Open LeetCode →</a>
+        </div>
+
+        <!-- Codeforces card -->
+        <div class="card" id="cf-card">
+          <div class="card-platform">
+            <span class="platform-dot cf-dot"></span>
+            <span class="platform-name">Codeforces</span>
+            <span class="rating-badge" id="cf-rating"></span>
+          </div>
+          <div class="card-status">
+            <span class="status-icon" id="cf-icon">–</span>
+            <span class="status-text" id="cf-text">Checking…</span>
+            <button class="btn-retry hidden" id="cf-retry" title="Retry">↻</button>
+          </div>
+          <a class="card-problem" id="cf-problem" target="_blank"></a>
+          <a class="card-link" href="https://codeforces.com/problemset" target="_blank" id="cf-link">Open Codeforces
+            →</a>
+        </div>
+
+      </div>
+
+      <!-- Streak + Stats + Calendar -->
+      <div class="streak-section">
+        <div class="streak-header">
+          <span class="streak-label">Streak</span>
+          <span class="streak-emoji" id="streak-emoji"></span>
+          <span class="streak-count" id="streak-count">0</span>
+          <span class="streak-unit">days</span>
+        </div>
+
+        <div class="stats-row">
+          <span class="stat-item">Best <strong id="best-streak">0</strong> d</span>
+          <span class="stat-sep">·</span>
+          <span class="stat-item"><strong id="month-solved">0</strong> this month</span>
+          <span class="stat-sep">·</span>
+          <span class="stat-item">Missed <strong id="missed-count">0</strong></span>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-bar">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+          </div>
+          <span class="progress-label" id="progress-label">0 / 0 days</span>
+        </div>
+
+        <div class="calendar-legend">
+          <span class="legend-item" id="legend-lc"><span class="legend-dot lc-col"></span>LC</span>
+          <span class="legend-item" id="legend-cf"><span class="legend-dot cf-col"></span>CF</span>
+          <span class="legend-item" id="legend-both"><span class="legend-dot both-col"></span>Both</span>
+        </div>
+
+        <div class="calendar" id="calendar"></div>
+      </div>
+
+      <div class="hint-row">
+        <span class="hint-text" id="hint-text"></span>
+      </div>
+
+      <div class="footer-row">
+        <span class="last-updated" id="last-updated"></span>
+        <button class="btn-refresh" id="refresh-btn">↻ Refresh</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Floating calendar tooltip -->
+  <div id="cal-tooltip"></div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
