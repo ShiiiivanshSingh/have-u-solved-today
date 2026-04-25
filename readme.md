@@ -10,11 +10,9 @@
   </a>
 </p>
 
+<img width="1470" height="956" alt="Screenshot 2026-04-25 at 11 26 11 AM" src="https://github.com/user-attachments/assets/9031cb85-3cc2-4221-873d-b9707d678af7" />
+
    
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/1b5e8860-bc0b-4b80-bd01-9c396d6acc90" width="45%" />
-  <img src="https://github.com/user-attachments/assets/8122e8bf-c619-4eac-9db3-2095f55b8001" width="45%" />
-</p>
 
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4f9cf9?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/ShiiiivanshSingh/have-u-solved-today)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-3ddc84?style=flat-square)](https://developer.chrome.com/docs/extensions/mv3/)
@@ -41,6 +39,11 @@
 - 🧹 **Auto storage cleanup** — prunes cache older than 30 days
 
 ---
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1b5e8860-bc0b-4b80-bd01-9c396d6acc90" width="45%" />
+  <img src="https://github.com/user-attachments/assets/8122e8bf-c619-4eac-9db3-2095f55b8001" width="45%" />
+</p>
+
 
 ## 🚀 Installation
 
