@@ -10,9 +10,10 @@
   </a>
 </p>
 
-<img width="1470" height="956" alt="Screenshot 2026-04-25 at 11 26 11 AM" src="https://github.com/user-attachments/assets/9031cb85-3cc2-4221-873d-b9707d678af7" />
+<p align="center">
+  <img width="700" height="700" alt="screenshot-studio-1777132946311" src="https://github.com/user-attachments/assets/56db49b7-cbeb-40e5-bdbf-8a92b9799ef3" />
 
-   
+
 
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4f9cf9?style=flat-square&logo=googlechrome&logoColor=white)](https://github.com/ShiiiivanshSingh/have-u-solved-today)
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-3ddc84?style=flat-square)](https://developer.chrome.com/docs/extensions/mv3/)
